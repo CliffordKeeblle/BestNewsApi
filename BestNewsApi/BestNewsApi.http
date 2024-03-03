@@ -1,0 +1,6 @@
+@BestNewsApi_HostAddress = http://localhost:5139
+
+GET {{BestNewsApi_HostAddress}}/"stories"/
+Accept: application/json
+
+###
