@@ -19,11 +19,6 @@ public class StoryController : ControllerBase
     [HttpGet("best")]
     public async Task<IActionResult> GetListOfBestStories(int n)
     {
-        if (n <= 0)
-        {
-            return BadRequest("Given value is invalid");
-        }
-
         var stories = await _storyService.GetBestStories(n);
         return Ok(stories);
     }

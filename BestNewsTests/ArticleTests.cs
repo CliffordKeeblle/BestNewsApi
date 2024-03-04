@@ -18,8 +18,8 @@ public class ArticleTests
     [Fact]
     public async Task GetStory_ReturnsCorrectIdAsync()
     {
-        int testId = 7;
-        Story story = new Story() { Id = testId };
+        int testScore = 17;
+        Story story = new Story() { Score = testScore };
 
         var response = new HttpResponseMessage
         {
@@ -39,8 +39,8 @@ public class ArticleTests
 
         var _sut = new ArticleService(httpClientFactory);
 
-        var result = await _sut.GetStory(testId);
+        var result = await _sut.GetStory(1);
 
-        result?.Id.Should().Be(testId);
+        result?.Score.Should().Be(testScore);
     }
 }

@@ -11,7 +11,6 @@ public class StoryService : IStoryService
     private readonly IHttpClientFactory _httpClientFactory;
     private readonly IArticleService _articleService;
     private readonly ILogger<StoryService> _logger;
-    private readonly int _fetchBatchSize = 1;
 
     public StoryService(
     IHttpClientFactory httpClientFactory,
@@ -62,5 +61,4 @@ public class StoryService : IStoryService
 
         return story;
     }
-
 }

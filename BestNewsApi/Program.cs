@@ -11,6 +11,7 @@ builder.Services.AddControllers();
 builder.Services.AddSingleton<IStoryService, StoryService>();
 builder.Services.AddSingleton<IArticleService, ArticleService>();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+builder.Services.AddHttpClient();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 

@@ -32,10 +32,10 @@ public class StoryTests
             .WithReturnType<Task<HttpResponseMessage>>()
             .Returns(Task.FromResult(response));
 
-        A.CallTo(() => articleService.GetStory(storyIds[0])).Returns(new Story { Id = storyIds[0], Score = 3 });
-        A.CallTo(() => articleService.GetStory(storyIds[1])).Returns(new Story { Id = storyIds[1], Score = 1 });
-        A.CallTo(() => articleService.GetStory(storyIds[2])).Returns(new Story { Id = storyIds[2], Score = 99 });
-        A.CallTo(() => articleService.GetStory(storyIds[3])).Returns(new Story { Id = storyIds[3], Score = 7 });
+        A.CallTo(() => articleService.GetStory(storyIds[0])).Returns(new Story { Score = 3 });
+        A.CallTo(() => articleService.GetStory(storyIds[1])).Returns(new Story { Score = 1 });
+        A.CallTo(() => articleService.GetStory(storyIds[2])).Returns(new Story { Score = 99 });
+        A.CallTo(() => articleService.GetStory(storyIds[3])).Returns(new Story { Score = 7 });
 
         var httpClient = new HttpClient(handler);
         var httpClientFactory = A.Fake<IHttpClientFactory>();
